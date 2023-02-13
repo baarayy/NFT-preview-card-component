@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+:root {
+    --Soft-blue: hsl(215, 51%, 70%);
+    --Cyan: hsl(178, 100%, 50%);
+    --Very-dark-blue-mainBG: hsl(217, 54%, 11%);
+    --Very-dark-blue-cardBG: hsl(216, 50%, 16%);
+    --Very-dark-blue-line: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+body {
+    background-color: var(--Very-dark-blue-mainBG);
+    font-family: "Outfit", sans-serif;
+    color: var(--Soft-blue);
+    font-weight: 100;
+    line-height: 1.6;
+}
+.main-card {
+    background-color: var(--Very-dark-blue-cardBG);
+    width: min(87.5%,22rem);
+    margin: 9.5rem auto;
+    border-radius: 15px;
+    padding: 1.5rem 1.6rem 2rem;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5);
+}
+
+.myimg {
+  position: relative;
+  margin: 0 auto;
+  max-width: 300px;  
+  width: 100%;
+}
+.main-img {
+    display: block;
+    max-width: 300px;
+    width:100%;
+    height: auto;
+    border-radius: 10px;
+}
+.overlay {
+    background-color: var(--Cyan);
+    position: absolute;
+    opacity: 0;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+.view {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+.myimg:hover .overlay {
+    opacity: 0.5;
+    cursor: pointer;
+}
+.myimg:hover .overlay + .view{
+    display: block;
+}
+.title {
+    color: var(--White);
+    margin: 1.4rem 0px 0.75rem 0px;
+    font-size: 1.4em;
+    font-weight: 400;
+}
+.describe {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.015em;
+    font-weight: 300;
+}
+.pricing {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 1.4rem;
+}
+.info {
+    display: flex;
+    align-items: center;
+}
+.icon {
+    margin-right: 0.5rem;
+}
+.price {
+    font-weight: 600;
+    color: var(--Cyan);
+}
+.creator-info {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid var(--Very-dark-blue-line);
+    padding-top: 1rem;
+}
+.avatar {
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    height: auto;
+    width: 2rem;
+    margin-right: 1rem;
+}
+.creator-text {
+    font-weight: 300;
+}
+.creator-name {
+    color: var(--White);
+}
+.title:hover,.creator-name:hover {
+    color: var(--Cyan);
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    font-size: 11px;
+}
+footer a {
+    color: var(--White);
+    text-decoration: none;
+}
+footer a:hover {
+    color: var(--Cyan);
+}
+/*Media Queries*/
+@media screen and (max-width: 300px) {
+  .pricing {
+    flex-direction: column;
+  }
+}
